@@ -11,7 +11,11 @@ export default class App extends Component {
 
     if (username) {
       const response = await axios
-        .get(BASE_URL)
+        .get(BASE_URL, {
+          params: {
+            cb: "https://cruizzer.github.io/website/",
+          },
+        })
         .then((res) => res.data.recenttracks.track);
 
       this.setState({
