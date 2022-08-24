@@ -1,0 +1,24 @@
+.singleCard{
+    text-align: center;
+    padding-top: 20px;
+    background-color: #E4395A;
+    border: 2px solid ;
+}
+
+.singleCard img {
+    left: 250px;
+}
+
+.nowPlaying {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 13px 15px 20px;
+    background-color: #8AFF8A;
+  }

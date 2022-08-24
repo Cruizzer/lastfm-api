@@ -1,0 +1,19 @@
+.userInfo {
+    background-color: #353238;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userInfo h1 {
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+.userInfo p {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+

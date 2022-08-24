@@ -1,34 +1,34 @@
 import React from "react";
-import "./Results.css";
+import UserInfo from "./UserInfo";
+import Card from "./Card";
 
-const ResultsList = ({ listOfTracks }) => {
+const ResultsList = ({
+  listOfTracks,
+  realName,
+  profilePic,
+  country,
+  playcount,
+  errorMessage,
+}) => {
   console.log(listOfTracks);
 
-  if (listOfTracks.length === 0) return;
-
-  const singleCard = listOfTracks.map((singleTrack) => {
-    return (
-      <div
-        className="singleCard"
-        key={"date" in singleTrack ? singleTrack.date.uts : "1"}
-      >
-        <img
-          className="ui left floated image"
-          src={Object.values(singleTrack.image[2])[1]}
-          alt="Empty"
-        />
-        <h1>{Object.values(singleTrack.artist)[1]}</h1>
-        <span>{singleTrack.name}</span>
-        <h2>
-          {"@attr" in singleTrack
-            ? "Now playing"
-            : Object.values(singleTrack.date)[1]}
-        </h2>
-        <br />
-      </div>
-    );
-  });
-  return <h1>{singleCard}</h1>;
+  return (
+    <>
+      {errorMessage === "" ? (
+        <>
+          <UserInfo
+            realName={realName}
+            profilePic={profilePic}
+            country={country}
+            playcount={playcount}
+          />
+          <Card listOfTracks={listOfTracks} />
+        </>
+      ) : (
+        <h1>{errorMessage}</h1>
+      )}
+    </>
+  );
 };
 
 export default ResultsList;

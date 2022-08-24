@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Search.css";
 
 export default class Search extends Component {
   state = { text: " " };
@@ -11,7 +12,7 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div className="ui segment">
+      <div className="ui segment" id="search">
         <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label>Enter your Last.Fm Username:</label>
