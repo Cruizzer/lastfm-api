@@ -33,7 +33,7 @@ export default class App extends Component {
       });
     } catch (e) {
       this.setState({
-        errorMessage: e.request.statusText,
+        errorMessage: e.response.data.message,
       });
     }
   };
@@ -56,9 +56,7 @@ export default class App extends Component {
           listOfTracks: response,
         });
       }
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   onSearchSubmit = (username) => {
