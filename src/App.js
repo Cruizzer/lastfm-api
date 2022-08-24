@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ResultsList from "./components/Results";
 import Search from "./components/Search";
 import axios from "axios";
-const BASE_URL = "http://ws.audioscrobbler.com/2.0/";
+const BASE_URL = "https://ws.audioscrobbler.com/2.0/";
 const API_KEY = "19830413ee1f97b9351f5ad48a04a78b";
 
 export default class App extends Component {
@@ -21,10 +21,7 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getinfo&user=${username}&api_key=${API_KEY}&format=json`,
-          {
-            baseURL: BASE_URL,
-          }
+            `?method=user.getinfo&user=${username}&api_key=${API_KEY}&format=json`
         )
         .then((res) => res.data.user);
 
