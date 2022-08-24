@@ -10,8 +10,6 @@ const ResultsList = ({
   playcount,
   errorMessage,
 }) => {
-  console.log(listOfTracks);
-
   return (
     <>
       {errorMessage === "" ? (

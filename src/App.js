@@ -21,7 +21,10 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getinfo&user=${username}&api_key=${API_KEY}&format=json`
+            `?method=user.getinfo&user=${username}&api_key=${API_KEY}&format=json`,
+          {
+            baseURL: BASE_URL,
+          }
         )
         .then((res) => res.data.user);
 
@@ -31,10 +34,7 @@ export default class App extends Component {
         country: response.country,
         playcount: response.playcount,
       });
-
-      console.log(response.playcount);
     } catch (e) {
-      console.log(e.response);
       this.setState({
         errorMessage: e.request.statusText,
       });
@@ -67,8 +67,7 @@ export default class App extends Component {
   onSearchSubmit = (username) => {
     this.setState({ errorMessage: "" });
     if (username.trim() === "") {
-      console.log("Empty Username!");
-      console.log(username);
+      this.setState({ errorMessage: "Empty username!" });
     } else {
       this.setState({ user: username });
       this.getUser(username);
