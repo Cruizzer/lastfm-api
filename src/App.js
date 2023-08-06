@@ -4,7 +4,6 @@ import Search from "./components/Search";
 import axios from "axios";
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/";
 
-
 export default class App extends Component {
   state = {
     user: "",
@@ -21,7 +20,7 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getinfo&user=${username}&api_key=${process.env.API_KEY}&format=json`
+            `?method=user.getinfo&user=${username}&api_key=${process.env.REACT_APP_API_KEY}&format=json`
         )
         .then((res) => res.data.user);
 
@@ -43,7 +42,7 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getrecenttracks&user=${username}&api_key=${process.env.API_KEY}&format=json`
+            `?method=user.getrecenttracks&user=${username}&api_key=${process.env.REACT_APP_API_KEY}&format=json`
         )
         .then((res) => res.data.recenttracks.track);
 
