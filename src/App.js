@@ -67,6 +67,8 @@ export default class App extends Component {
       this.getUser(username);
       this.getTracks(username);
     }
+
+    console.log(process.env.REACT_APP_PORT)
   };
 
   render() {
