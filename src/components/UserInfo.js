@@ -11,7 +11,6 @@ const UserInfo = ({ realName, profilePic, country, playcount }) => {
             ? "https://external-preview.redd.it/hLitnIbPtXmyMB8vcMkiGRE97PNFp4luuRM6wYDTdgc.jpg?auto=webp&s=2c65de69fac1b49fdfd24bd7d75931f66947e724"
             : profilePic
         }
-        alt="Profile picture"
         width={174}
         height={174}
       />

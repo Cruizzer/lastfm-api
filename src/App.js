@@ -3,7 +3,7 @@ import ResultsList from "./components/Results";
 import Search from "./components/Search";
 import axios from "axios";
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/";
-const API_KEY = "19830413ee1f97b9351f5ad48a04a78b";
+
 
 export default class App extends Component {
   state = {
@@ -21,7 +21,7 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getinfo&user=${username}&api_key=${API_KEY}&format=json`
+            `?method=user.getinfo&user=${username}&api_key=${process.env.API_KEY}&format=json`
         )
         .then((res) => res.data.user);
 
@@ -43,7 +43,7 @@ export default class App extends Component {
       const response = await axios
         .get(
           BASE_URL +
-            `?method=user.getrecenttracks&user=${username}&api_key=${API_KEY}&format=json`
+            `?method=user.getrecenttracks&user=${username}&api_key=${process.env.API_KEY}&format=json`
         )
         .then((res) => res.data.recenttracks.track);
 
